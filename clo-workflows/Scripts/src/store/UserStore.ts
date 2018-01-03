@@ -1,3 +1,4 @@
+import { INewProjectState } from './../model/UIStoreInterfaces'
 import { MockDataAccess } from './../dataAccess/MockDataAccess'
 import { IProject } from './../model/Project'
 import { RootStore } from "./RootStore"
@@ -23,5 +24,12 @@ export class UserStore {
         return this.currentUser
             && this.currentUser.role
             && this.currentUser.role.name !== "Anonymous"
+    }
+    
+    @observable newProjectState: INewProjectState = {
+    }
+    
+    @action setNewProjectState = (newState) =>{
+        this.newProjectState = newState
     }
 }
