@@ -1,23 +1,36 @@
 import * as React from "react"
-import { Dropdown, IDropdown, DropdownMenuItemType, IDropdownOption } from "office-ui-fabric-react/lib/Dropdown"
-import { IMusicWork, WorkType } from "../model/Work"
+import { WorkType } from "../model/Work"
 import { inject, observer } from "mobx-react"
-import { INewProjectState } from "../model/NewProjectState"
-import { UserStore } from "../store/UserStore"
-import { RootStore } from "../store/RootStore"
+import {
+  SearchBox
+} from 'office-ui-fabric-react/lib/SearchBox';
 
 export interface IWorkSearchProps {
   workType: WorkType
 }
-export const  WorkSearch = observer( (props: IWorkSearchProps)=> {
-
-    const options = [{ key: "Header", text: "Work Types", itemType: DropdownMenuItemType.Header }]
-    
+const styles = {
+  maxWidth:"350px"
+}
+export const  WorkSearch = observer( (props: IWorkSearchProps)=> {    
     return (
-     <div> 
+     <div style={styles}> 
         <h3> Search for existing </h3>  
         
-        {`WORKTYPE: ${props.workType}`} 
+        {`${props.workType}`} 
+        
+        <SearchBox
+        labelText={`Search for existing ${props.workType}s`}
+          onEscape={ (ev) => {
+            console.log('Custom onEscape Called');
+          } }
+          onClear={ (ev) => {
+            console.log('Custom onClear Called');
+          } }
+          onChange={ (newValue) => console.log('SearchBox onChange fired: ' + newValue) }
+          onSearch={ (newValue) => console.log('SearchBox onSearch fired: ' + newValue) }
+          onFocus={ () => console.log('onFocus called') }
+          onBlur={ () => console.log('onBlur called') }
+        />
      </div>
     )
   })
