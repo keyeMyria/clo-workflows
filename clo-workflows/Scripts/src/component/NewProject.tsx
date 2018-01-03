@@ -3,7 +3,7 @@ import {IUser} from '../model/User';
 import {WorkTypeDropdown} from './WorkTypeDropdown';
 import {IArticleWork, WorkType, IBookWork, IBookChapterWork, IImageWork, IOtherWork, IVideoWork, IWebsiteWork, IMusicWork} from '../model/Work';
 import Header from './Header';
-import {INewProjectState} from '../model/NewProjectState';
+import {INewProjectState} from '../model/UIStoreInterfaces';
 import {UserStore} from '../store/UserStore';
 import {WorkSearch} from "./WorkSearch"
 import {observer} from 'mobx-react';

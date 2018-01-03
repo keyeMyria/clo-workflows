@@ -2,7 +2,7 @@ import * as React from "react"
 import { Dropdown, IDropdown, DropdownMenuItemType, IDropdownOption } from "office-ui-fabric-react/lib/Dropdown"
 import { IMusicWork, WorkType } from "../model/Work"
 import { inject, observer } from "mobx-react"
-import { INewProjectState } from "../model/NewProjectState"
+import { INewProjectState } from "../model/UIStoreInterfaces"
 import { UserStore } from "../store/UserStore"
 import { RootStore } from "../store/RootStore"
 export interface IWorkTypeDropdownProps {

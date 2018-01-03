@@ -6,7 +6,7 @@ import {ExistingProjects} from "./ExistingProjects";
 import {observer, inject} from "mobx-react";
 import {RootStore} from "../store/RootStore";
 import {UserStore} from "../store/UserStore";
-import {INewProjectState} from "../model/NewProjectState";
+import {INewProjectState} from "../model/UIStoreInterfaces";
 import Header from "./Header";
 
 interface IAnonymousProps {
@@ -17,7 +17,7 @@ userStore:UserStore
 export class Anonymous extends React.Component<IAnonymousProps, RootStore> {
   componentWillMount() {
     this.userStore = this.props.userStore
-  }
+  }  
   private userStore: UserStore
   render() {
     console.log("anon component rendered")
