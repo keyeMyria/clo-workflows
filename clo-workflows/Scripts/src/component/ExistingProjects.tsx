@@ -13,24 +13,10 @@ export class ExistingProjects extends React.Component<IExistingProjectsProps> {
     const { currentUser, currentUserProjects } = this.props
     return (
       <div>
-        {
-          <ExistingPoject />
-        }
+        ...existing projects
       </div>
     )
   }
 }
 
 
-const ExistingPoject = () =>{
-  return(
-    <div className='ms-BasicButtonsExample'>
-    <Label>Click the button to insert text.</Label>
-    <PrimaryButton
-      data-automation-id='test'
-      text='Insert text...'
-      onClick={ this.insertText }
-    />
-  </div>
-  )
-}
