@@ -13,6 +13,8 @@ const styles = {
 }
 const Header = (props: IHeaderProps) => {
   const { currentUser } = props
+  console.log("header component rendered")
+  
   return (
     <div style={styles}>
       <Persona

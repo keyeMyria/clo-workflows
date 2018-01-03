@@ -3,17 +3,29 @@ import { IUser } from "../model/User"
 import {NewProject} from "./NewProject"
 import {IProject} from "../model/Project";
 import {ExistingProjects} from "./ExistingProjects";
+import {observer, inject} from "mobx-react";
+import {RootStore} from "../store/RootStore";
+import {UserStore} from "../store/UserStore";
+import {INewProjectState} from "../model/NewProjectState";
+import Header from "./Header";
 
 interface IAnonymousProps {
-  currentUser: IUser
-  currentUserProjects: Array<IProject>
+userStore:UserStore
+  
 }
-export class Anonymous extends React.Component<IAnonymousProps> {
+@inject("rootStore")
+export class Anonymous extends React.Component<IAnonymousProps, RootStore> {
+  componentWillMount() {
+    this.userStore = this.props.userStore
+  }
+  private userStore: UserStore
   render() {
-    const { currentUser, currentUserProjects } = this.props
+    console.log("anon component rendered")
+    const { currentUser, currentUserProjects } = this.props.userStore
     return (
       <div>
-        <NewProject currentUser={currentUser} />
+        <Header currentUser = {this.props.userStore.currentUser} />
+        <NewProject userStore={this.userStore} />
         <ExistingProjects currentUser={currentUser} currentUserProjects = {currentUserProjects} />
 
       </div>
