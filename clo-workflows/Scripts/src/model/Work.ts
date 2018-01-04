@@ -47,7 +47,7 @@ export interface IArticleWork extends IWork {
     journalTitle: string
     edition: string
     formatInformation: string
-    callNumber: string
+    callNumber: number
     ISSN: number
     volume: number
     issue: string
@@ -127,3 +127,32 @@ export interface IOtherWork extends IWork {
     URL: string
     hardCopyOwner: string
 }
+
+
+
+// export interface All2{
+//     ArticleWork:  IArticleWork,
+//     BookWork: IBookWork,
+//     BookChapterWork : IBookChapterWork,
+//     ImageWork : IImageWork,
+//     OtherWork : IOtherWork,
+//         VideoWork : IVideoWork,
+//     WebsiteWork : IWebsiteWork,
+//     MusicWork : IMusicWork
+// }
+
+// export class All {
+//     ArticleWork =(props: IArticleWork)=>{}
+//     BookWork = (props:IBookWork)=>{}
+//     BookChapterWork = (props:IBookChapterWork)=>{}
+//     ImageWork = (props: IImageWork) =>{}
+//     OtherWork =(props:IOtherWork)=>{}
+//     VideoWork = (props: IVideoWork)=>{}
+//     WebsiteWork = (props: IWebsiteWork)=>{}
+//     MusicWork = (props: IMusicWork)=>{}
+    
+// }
+
+
+
+    
