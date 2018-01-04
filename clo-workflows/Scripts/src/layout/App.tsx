@@ -10,6 +10,10 @@ import { Employee } from "../component/Employee"
 
 // Register icons and pull the fonts from the default SharePoint cdn.
 initializeIcons()
+const styles = {
+  margin: "20px",
+  padding: "15px",
+}
 @inject("rootStore")
 @observer
 export class App extends React.Component<any, any> {
@@ -21,7 +25,7 @@ export class App extends React.Component<any, any> {
 
   render() {
     return (
-      <Fabric>
+      <Fabric style={styles}>
         {this.userStore.isEmployee ? (
           <Employee currentUser={this.userStore.currentUser} />
         ) : (

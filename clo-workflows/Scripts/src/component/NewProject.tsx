@@ -15,6 +15,7 @@ export const NewProject  = observer((props: INewProjectProps)=> {
     const workTypes: Array<WorkType> = ["Article", "Book", "Book Chapter", "Image", "Music", "Other", "Video", "Website"]
     return(
     <div>
+      <h1>create a new project</h1>
       <WorkTypeDropdown workTypes = {workTypes} newProjectState={props.userStore.newProjectState} setNewProjectState={props.userStore.setNewProjectState} /> 
       {
         props.userStore.newProjectState.key &&
